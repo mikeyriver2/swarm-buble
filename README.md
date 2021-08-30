@@ -1,7 +1,7 @@
 # Getting Started with this Project
 
-Live demo at https://mikeyriver2.github.io/swarm-buble/
-Created Using Create-React-App
+Live demo at https://mikeyriver2.github.io/swarm-buble/ <br />
+Created Using Create-React-App 
 
 - cd into the project
 - Rename .env.example to .env
