@@ -1,0 +1,49 @@
+.messagePreview {
+  // @include flex-cAlign;
+  display: flex;
+  width: 100%;
+  height: 63px; // need fixed height
+  &.hasUnread {
+    .messagePreview {
+      &__message {
+        h3, p { font-weight: bold; color: #352956 }
+      }
+    }
+  }
+  &__avatar {
+    background: url('/assets/Images/Logo_01.png');
+    background-size: cover;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+  }
+  &__message {
+    h3 { 
+      margin: 0px;
+      font-weight: 100;
+      font-size: 16px; 
+      color: #352956;
+    }
+    p {
+      margin: 5px 0px;
+      font-size: 14px;
+      color: #9A95AA;
+      max-width: 235px;
+    }
+    margin-left: 12px;
+  }
+  &__details {
+    text-align: right;
+    p {
+      margin: 0px;
+      font-size: 12px;
+      text-align: right;
+      color: #9A95AA;
+    }
+    .count {
+      margin-top: 10px;
+    }
+  }
+  margin: 12px 0px;
+  text-decoration: none;
+}

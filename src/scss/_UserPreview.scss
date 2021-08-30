@@ -1,0 +1,34 @@
+.userPreview {
+  @include flex-cAlign;
+  justify-content: space-between;
+  &__avatar {
+    display: inline-block;
+    background: url('/assets/Images/Avatar_01.png');
+    background-size: cover;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  &__user {
+    @include flex-cAlign;
+    p { 
+      color: #9A95AA;
+      margin: 0px;
+      font-size: 14px; 
+      &:first-of-type {
+        margin-right: 6px;
+      }
+    }
+  }
+  &.hasUnread {
+    .userPreview {
+      &__user p:first-of-type {
+        font-weight: bold;
+        color: #352956;
+      }
+    }
+  }
+  margin-top: 10px;
+  text-decoration: none;
+}

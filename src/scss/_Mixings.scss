@@ -1,0 +1,21 @@
+@mixin flex-cAlign-cJustify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-cAlign {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-cJustify {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin mini-header {
+  font-size: 12px;
+  color: #9A95AA;
+  text-transform: uppercase;
+}

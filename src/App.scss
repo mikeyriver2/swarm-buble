@@ -1,0 +1,44 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@font-face {
+    font-family: Circular;
+    src: url("/assets/Font/CircularStd-Book.otf");
+}
+
+@import './scss/Mixings';
+@import './scss/MessagePreview.scss';
+@import './scss/UserPreview.scss';
+@import './scss/Thread.scss';
+@import './scss/ThreadInput.scss';
+@import './scss/Message.scss';
+@import './scss/Avatar.scss';
+@import './scss/ThreadDetails.scss';
+
+.swarm {
+  display: flex;
+  height: 100vh;
+  font-family: Circular;
+  &__landing {
+    &__inbox {
+      h4 {
+        @include mini-header;
+        margin-bottom: 12px; 
+      }
+    }
+    width: 25%;
+    padding: 25px 32px;
+  }
+  .messagePreview:first-of-type {
+    margin-top: 8px;
+  }
+}
+
+.count {
+  span {
+    background: rgba(117, 106, 240, 0.1);
+    border-radius: 50%;
+    color:#756AF0;
+    font-size: 12px;
+    padding: 3px 7px;
+  }
+}

@@ -1,0 +1,12 @@
+.threadDetails {
+  &__header {
+    @include flex-cAlign;
+    flex-direction: column;
+  }
+  .userPreview__user {
+    p:first-of-type {
+      color: #352956;
+    }
+  }
+  padding: 32px;
+}

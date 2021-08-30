@@ -1,0 +1,46 @@
+.message {
+  &__contents {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__avatar {
+    background: url('/assets/Images/Avatar_01.png');
+    background-size: cover;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+  &__bubble {
+    padding: 16px 24px;
+    max-width: 345px;
+    background: #756AF0;
+    border-radius: 16px 16px 16px 0px;
+    p { margin: 0px; color: white; }
+  }
+  &__details {
+    padding: 6px 0px 0px 38px;
+    color: #9A95AA;
+    font-size: 14px;
+  }
+  &.isOwn {
+    .message {
+      &__bubble {
+        padding: 16px 24px;
+        background: #F7F6FA;
+        border-radius: 16px 16px 0px 16px;
+        p { color: #352956; }
+      }
+      &__avatar {
+        display: none;
+      }
+      &__contents {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      &__details {
+        text-align: right;
+      }
+    }
+  }
+}
