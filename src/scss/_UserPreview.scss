@@ -1,11 +1,7 @@
 .userPreview {
   @include flex-cAlign;
   justify-content: space-between;
-  &__avatar {
-    display: inline-block;
-    background: url('/assets/Images/Avatar_01.png');
-    background-size: cover;
-    border-radius: 50%;
+  .avatar {
     width: 20px;
     height: 20px;
     margin-right: 8px;

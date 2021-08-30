@@ -14,18 +14,22 @@
 @import './scss/Avatar.scss';
 @import './scss/ThreadDetails.scss';
 
+// Didn't take mobile into consideration since there's no design in figma 
+
 .swarm {
   display: flex;
   height: 100vh;
   font-family: Circular;
   &__landing {
+    max-width: 360px;
     &__inbox {
       h4 {
         @include mini-header;
         margin-bottom: 12px; 
       }
     }
-    width: 25%;
+    // width: 25%;
+    width: 360px;
     padding: 25px 32px;
   }
   .messagePreview:first-of-type {

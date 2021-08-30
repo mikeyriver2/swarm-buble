@@ -1,9 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import Avatar from './Avatar';
 
 const MessagePreview = ({
+  content,
+  title,
   unreadCount,
 }) => {
-  let message = 'When can you send the branding manual for the press chicken wings';
+  let message = content;
   message = message.length > 50
     ? `${message.substr(0, 51)}...`
     : message;
@@ -15,11 +19,15 @@ const MessagePreview = ({
         }
       href="#"
     >
-      <div className="messagePreview__avatar" />
+      <Avatar
+        width="48px"
+        height="48px"
+        url="/Images/Logo_01.png"
+      />
       <div className="messagePreview__message">
-        <h3>Logistics Team</h3>
+        <h3>{title}</h3>
         <p>
-          {/* Ideally though, sub limit should be based on component */}
+          {/* Ideally though, sub limit should be based on width of component */}
           { message }
         </p>
       </div>

@@ -1,7 +1,12 @@
 .avatar {
-  background: url('/assets/Images/Logo_01.png');
-  background-size: cover;
+  // background: url('/assets/Images/Logo_01.png');
+  // background-size: cover;
   border-radius: 50%;
   width: 48px;
   height: 48px;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+  }
 }

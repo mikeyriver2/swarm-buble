@@ -3,10 +3,11 @@ import ThreadInput from './ThreadInput';
 import ThreadDetails from './ThreadDetails';
 import Message from './Message';
 
-const Thread = () => {
+const Thread = ({ activateThread }) => {
+  const { messages, title, logo, members } = activateThread;
   // I would personally go with stateful components though
   //  for components wherein states would be relative to each other
-  const [messageHeight, setMessageHeight] = useState(0);
+
   const messageContainer = useRef(null);
   const header = useRef(null);
 
@@ -21,8 +22,8 @@ const Thread = () => {
   };
 
   useEffect(() => {
-    // helpful when actually setting state asynchronously when
-    // fetching APIs
+    // setting state helpful when actually setting state asynchronously when
+    // fetching APIs to rerender page every load/onresize
     toggleAdjustHeight();
   }, []);
 
@@ -34,24 +35,34 @@ const Thread = () => {
           className="thread__header"
         >
           <h2>
-            Team Turon 🍌
+            {title}
           </h2>
         </div>
         <div
           ref={messageContainer}
           className="thread__messages"
         >
-          <Message />
+          {/** With real data i would map them */}
+          <Message
+            message={messages[0]}
+          />
+          <Message
+            message={messages[1]}
+          />
           <div className="thread__divider">
             <p><span>Now</span></p>
           </div>
           <Message
-            isOwn
+            message={messages[2]}
           />
         </div>
         <ThreadInput />
       </div>
-      <ThreadDetails />
+      <ThreadDetails
+        logo={logo}
+        title={title}
+        members={members}
+      />
     </div>
   );
 };

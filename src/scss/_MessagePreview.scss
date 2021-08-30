@@ -11,9 +11,6 @@
     }
   }
   &__avatar {
-    background: url('/assets/Images/Logo_01.png');
-    background-size: cover;
-    border-radius: 50%;
     width: 48px;
     height: 48px;
   }
@@ -28,7 +25,7 @@
       margin: 5px 0px;
       font-size: 14px;
       color: #9A95AA;
-      max-width: 235px;
+      width: 235px;
     }
     margin-left: 12px;
   }

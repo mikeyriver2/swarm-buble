@@ -1,10 +1,17 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './App.scss';
+import logo from './assets/Logo/Wordmark.svg';
 import MessagePreview from './components/reusables/MessagePreview';
 import UserPreview from './components/reusables/UserPreview';
 import Thread from './components/messaging/Thread';
+import data from './assets/data';
 
+const { 
+  activateThread,
+  threads, 
+  directMessages 
+} = data;
 function App() {
   return (
     // Index Component
@@ -16,21 +23,43 @@ function App() {
         >
           <img
             alt="buble logo"
-            src="./Logo/Wordmark.svg"
+            src={logo}
           />
         </a>
         <div className="swarm__landing__inbox">
           <h4>Team</h4>
-          <MessagePreview unreadCount={2} />
-          <MessagePreview />
+          {
+            threads.map((thread) => {
+              const {
+                unreadCount,
+                title,
+                content,
+              } = thread;
+
+              return (
+                <MessagePreview
+                  content={content}
+                  title={title}
+                  unreadCount={unreadCount}
+                />
+              );
+            })
+          }
         </div>
         <div className="swarm__landing__inbox">
           <h4>Personal</h4>
-          <UserPreview unreadCount={2} />
-          <UserPreview />
+          {directMessages.map(dm => {
+            return (
+              <UserPreview
+                dm={dm || {}}
+              />
+            );
+          })}
         </div>
       </div>
-      <Thread />
+      <Thread
+        activateThread={activateThread}
+      />
     </div>
   );
 }

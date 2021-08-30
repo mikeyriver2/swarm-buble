@@ -1,23 +1,28 @@
 import React from 'react';
-import Avatar from '../../components/reusables/Avatar';
+import Avatar from '../reusables/Avatar';
 import UserPreview from '../reusables/UserPreview';
 
-const ThreadDetails = () => (
+const ThreadDetails = ({ title, logo, members}) => (
   <div className="threadDetails">
     <div className="threadDetails__header">
       <Avatar
-        url="./Images/Logo 02.png"
+        url={logo || '/Images/Logo_01.png'}
         height="128px"
         width="128px"
       />
-      <h1>Team Turon</h1>
+      <h1>{title}</h1>
     </div>
     <div className="threadDetails__body">
       <h4>Members</h4>
-      <UserPreview />
-      <UserPreview />
-      <UserPreview />
-      <UserPreview />
+      {
+        members.map(member => {
+          return (
+            <UserPreview
+              dm={member}
+            />
+          )
+        })
+      }
     </div>
   </div>
 );

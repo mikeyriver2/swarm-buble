@@ -3,10 +3,7 @@
     display: flex;
     align-items: flex-end;
   }
-  &__avatar {
-    background: url('/assets/Images/Avatar_01.png');
-    background-size: cover;
-    border-radius: 50%;
+  .avatar {
     width: 32px;
     height: 32px;
     margin-right: 8px;
@@ -24,15 +21,15 @@
     font-size: 14px;
   }
   &.isOwn {
+    .avatar {
+      display: none;
+    }
     .message {
       &__bubble {
         padding: 16px 24px;
         background: #F7F6FA;
         border-radius: 16px 16px 0px 16px;
         p { color: #352956; }
-      }
-      &__avatar {
-        display: none;
       }
       &__contents {
         width: 100%;

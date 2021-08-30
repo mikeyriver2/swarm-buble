@@ -1,11 +1,13 @@
 .thread {
-  width: 75%;
+  // width: 75%;
+  width: calc(100vw - (360px + (32px * 2)));
   display: flex;
   &__contents {
-    width: 55%;
+    // *4 because we're dividing it again
+    width: calc(100vw - (360px + (32px * 4)));
   }
   .threadDetails {
-    width: 45%;
+    width: 360px;
   }
 
   &__header {
@@ -27,7 +29,7 @@
       margin: 0px 0px 25px 0px;
     }
     .message:not(:first-child) {
-      margin: 25px;
+      margin: 25px 0px;
     }
   }
   &__divider {
