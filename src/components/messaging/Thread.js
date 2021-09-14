@@ -20,8 +20,19 @@ const Thread = ({ activateThread }) => {
   const header = useRef(null);
 
   useEffect(() => {
-    const dom = document.querySelector('.message.isLast');
-    dom.scrollIntoView({ behavior: 'smooth' });
+    const lastestMessage = document.querySelector('.message.isLast .message__bubble p');
+    lastestMessage.scrollIntoView({ behavior: 'smooth' });
+
+    // update message preview in thread preview
+    // ideally i would not do this, but this is only for demo
+    const domPrev = document.querySelector(`
+      .messagePreview:first-of-type .messagePreview__message p
+    `);
+
+    const toPrev = lastestMessage.innerText;
+    domPrev.innerText = toPrev.length > 50
+      ? `${toPrev.substr(0, 51)}...`
+      : toPrev;
   }, [messages]);
 
   const toggleAdjustHeight = () => {

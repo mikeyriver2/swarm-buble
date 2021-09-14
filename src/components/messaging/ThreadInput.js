@@ -17,7 +17,7 @@ const ThreadInput = ({ messages, setMessages }) => {
   };
 
   const handleSend = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && message.content) {
       const toInsert = [...messages, message];
       setMessages(toInsert);
       setMessage({});

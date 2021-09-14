@@ -1,15 +1,15 @@
 const data = {
   threads: [
     {
+      title: 'Team Turon',
+      content: '@red sent 3 images',
+      logo: '/Image/Logo_02.png',
+    },
+    {
       title: 'Logistics Team',
       content: 'When can you send the branding manual for the press woo extra long',
       logo: '/Image/Logo_01.png',
       unreadCount: 2,
-    },
-    {
-      title: 'Team Turon',
-      content: '@red sent 3 images',
-      logo: '/Image/Logo_02.png',
     },
     {
       title: 'Da Board Room',
