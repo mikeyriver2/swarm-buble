@@ -4,12 +4,25 @@ import ThreadDetails from './ThreadDetails';
 import Message from './Message';
 
 const Thread = ({ activateThread }) => {
-  const { messages, title, logo, members } = activateThread;
+  const {
+    messages: pMessages,
+    title,
+    logo,
+    members
+  } = activateThread;
+
   // I would personally go with stateful components though
   //  for components wherein states would be relative to each other
+  const [messages, setMessages] = useState([...pMessages]);
+  // Ideally it's not good practice to setstate a prop but i'm just using it for this case
 
   const messageContainer = useRef(null);
   const header = useRef(null);
+
+  useEffect(() => {
+    const dom = document.querySelector('.message.isLast');
+    dom.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const toggleAdjustHeight = () => {
     const threadInput = document.querySelector('#threadInput');
@@ -42,21 +55,23 @@ const Thread = ({ activateThread }) => {
           ref={messageContainer}
           className="thread__messages"
         >
-          {/** With real data i would map them */}
-          <Message
-            message={messages[0]}
-          />
-          <Message
-            message={messages[1]}
-          />
-          <div className="thread__divider">
-            <p><span>Now</span></p>
-          </div>
-          <Message
-            message={messages[2]}
-          />
+          {
+            messages.map((message, index) => {
+              return (
+                <Message
+                  key={`message-${index * Math.random()}`}
+                  message={message}
+                  lastMessage={messages[index - 1]}
+                  isLast={index === messages.length - 1}
+                />
+              );
+            })
+          }
         </div>
-        <ThreadInput />
+        <ThreadInput
+          messages={messages}
+          setMessages={setMessages}
+        />
       </div>
       <ThreadDetails
         logo={logo}

@@ -21,12 +21,13 @@
   }
   &__messages {
     padding: 30px 25px;
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    // justify-content: flex-end;
     .message:first-child {
       margin: 0px 0px 25px 0px;
+      margin-top: auto !important;
     }
     .message:not(:first-child) {
       margin: 25px 0px;
