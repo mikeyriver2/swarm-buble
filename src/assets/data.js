@@ -65,7 +65,7 @@ const data = {
     ],
     messages: [
       {
-        created_at: '2021 09 11 11:09:75',
+        created_at: '2021 09 11 11:39:35',
         creator: {
           profile_picture: '/Images/Avatar 05.png',
           tag: '@robert',
@@ -74,7 +74,7 @@ const data = {
         isOwn: false,
       },
       {
-        created_at: '2021 09 11 13:09:75',
+        created_at: '2021 09 11 13:09:15',
         creator: {
           profile_picture: '/Images/Avatar 06.png',
           tag: '@pena',
@@ -83,7 +83,7 @@ const data = {
         isOwn: false,
       },
       {
-        created_at: '2021 09 12 15:09:75',
+        created_at: '2021 09 12 15:09:25',
         creator: {
           profile_picture: '/Images/Avatar 07.png',
           tag: '@pena',

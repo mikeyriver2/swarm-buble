@@ -28,9 +28,13 @@
       width: 235px;
     }
     margin-left: 12px;
+    max-width: 226px;
+    white-space: break-spaces;
+
   }
   &__details {
     text-align: right;
+    max-width: 60px;
     p {
       margin: 0px;
       font-size: 12px;

@@ -10,19 +10,21 @@ const Message = ({lastMessage, message, isLast }) => {
     created_at
   } = message;
   let showDivider;
-
-  const createdAt = moment(created_at, 'YYY MM DD HH:MM:SS');
+  console.log(created_at);
+  const createdAt = moment(created_at, 'YYYY MM DD HH:mm:s');
   const date = createdAt.format('D M');
-  const time = createdAt.format('h:MM a');
+  const time = createdAt.format('h:mm a');
 
   const today = moment();
   const dateToday = today.format('D M');
 
   if (lastMessage) {
-    const lastMessageCreatedAt = moment(lastMessage.created_at, 'YYY MM DD HH:MM:SS');
+    const lastMessageCreatedAt = moment(lastMessage.created_at, 'YYYY MM DD HH:mm:s');
     const duration = moment.duration(createdAt.diff(lastMessageCreatedAt));
     const inMins = duration.asMinutes();
 
+    // if interval between message is > 1 day and it is today
+    //  show divider
     if (inMins >= (60*24)
       && dateToday === date
     ) {
