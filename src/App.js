@@ -38,6 +38,7 @@ function App() {
 
               return (
                 <MessagePreview
+                  key={Math.random()}
                   content={content}
                   title={title}
                   unreadCount={unreadCount}
@@ -48,9 +49,10 @@ function App() {
         </div>
         <div className="swarm__landing__inbox">
           <h4>Personal</h4>
-          {directMessages.map(dm => {
+          {directMessages.map((dm) => {
             return (
               <UserPreview
+                key={Math.random()}
                 dm={dm || {}}
               />
             );

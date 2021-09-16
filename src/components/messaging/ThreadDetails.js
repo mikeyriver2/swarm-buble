@@ -18,6 +18,7 @@ const ThreadDetails = ({ title, logo, members}) => (
         members.map(member => {
           return (
             <UserPreview
+              key={Math.random()}
               dm={member}
             />
           )

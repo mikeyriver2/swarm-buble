@@ -10,7 +10,7 @@ const Message = ({lastMessage, message, isLast }) => {
     created_at
   } = message;
   let showDivider;
-  console.log(created_at);
+
   const createdAt = moment(created_at, 'YYYY MM DD HH:mm:s');
   const date = createdAt.format('D M');
   const time = createdAt.format('h:mm a');
